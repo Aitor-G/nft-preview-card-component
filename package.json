@@ -1,0 +1,14 @@
+{
+  "name": "nft-preview-card-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss:assets/css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.61.0"
+  }
+}

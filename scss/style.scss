@@ -1,0 +1,164 @@
+@use '../scss' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: $very-darkblue;
+  color: $skyblue;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  height: 100vh;
+  @include columnCenter;
+}
+
+.component {
+  background-color: $darkblue;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow:
+    0 1rem 1rem 1rem rgba(#000, 0.1), // 0 2.5rem 0 1rem rgba($color: #000000, $alpha: 1.0),
+    0 0 3rem 3rem rgba(#000, 0.05);
+
+  @include columnCenter;
+
+  @include onDesktop {
+    height: 600px;
+    width: 350px;
+  }
+
+  @include onMobile {
+    height: 550px;
+    width: 330px;
+  }
+
+  &__header {
+    position: relative;
+
+    &-img {
+      @include onDesktop {
+        height: 300px;
+        width: 300px;
+      }
+
+      @include onMobile {
+        height: 280px;
+        width: 280px;
+      }
+
+      border-radius: 1rem;
+    }
+
+    &-icon {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background-color: rgba($cyan, 0.6);
+      border-radius: 1rem;
+      @include columnCenter;
+      visibility: hidden;
+    }
+
+    &:hover {
+      .component__header-icon {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 1rem;
+
+    &-title {
+      color: $white;
+      font-size: 1.4rem;
+      font-weight: $sem;
+
+      &:hover {
+        color: $cyan;
+      }
+    }
+
+    &-paragraph {
+      margin: 1rem 0 1.4rem 0;
+      font-weight: $lig;
+      font-size: 1.2rem;
+
+      @include onDesktop {
+        font-size: 1.2rem;
+      }
+
+      @include onMobile {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__box {
+    width: 100%;
+    @include rowBetween;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba($color: #888, $alpha: 1.0);
+
+    &-value {
+      font-size: 1rem;
+      font-weight: $sem;
+      color: $cyan;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-time {
+      font-size: 1rem;
+      font-weight: $reg;
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    margin-top: 1rem;
+    @include rowLeft;
+
+
+    &-avatar {
+      height: 35px;
+      border: 1px solid $white;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    &-author {
+      font-size: 0.95rem;
+      font-weight: $reg;
+
+      a {
+        color: $white;
+
+        &:hover {
+          color: $cyan;
+        }
+      }
+    }
+  }
+}
