@@ -1,3 +1,3 @@
-# Order Summary Component
+# NFT Preview Card Component
 
-A basic example of an order summary component.
+A basic example of a NFT preview card component.
